@@ -8,5 +8,5 @@ class WeatherForm(forms.ModelForm):
     class Meta:
         model = WeatherInfo
 
-        fields = ('city','tempirature',)
+        fields = ('city','temperature','humidity')
         wigets={'city':forms.TextInput(attrs={})}
