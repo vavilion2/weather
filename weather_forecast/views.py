@@ -5,7 +5,7 @@ from django.views import generic
 import requests, json
 from .forms import WeatherForm
 from django.views.decorators.csrf import csrf_protect
-
+#from .my_def import base
 
 @csrf_protect
 def landing(request):
