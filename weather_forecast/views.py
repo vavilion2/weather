@@ -1,12 +1,11 @@
+import json
 import urllib.request
-from urllib import request
-from django.shortcuts import render, redirect
-from django.views import generic
-import requests, json
-from .forms import WeatherForm
+from django.shortcuts import render
 from django.views.decorators.csrf import csrf_protect
+from .forms import WeatherForm
 
 
+# from .my_def import base
 # from .my_def import base
 
 @csrf_protect
@@ -36,7 +35,7 @@ def landing(request):
                 data.humidity = humidity
                 data.temperature = temp
                 data.save()
-            print(forecast)
+        # print(forecast)
         except Exception:
             return render(request, 'weather/landing2.html')
     else:
