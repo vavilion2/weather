@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'weather_forecast',
     'djoser',
     'rest_framework',
+    'api',
 
 ]
 

@@ -1,16 +1,18 @@
 import urllib.request
 from urllib import request
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.views import generic
 import requests, json
 from .forms import WeatherForm
 from django.views.decorators.csrf import csrf_protect
-#from .my_def import base
+
+
+# from .my_def import base
 
 @csrf_protect
 def landing(request):
     if request.method == 'POST':
-        #form = WeatherForm
+        # form = WeatherForm
         form = WeatherForm(request.POST, request.FILES)
         try:
             city = request.POST['city']
@@ -31,12 +33,12 @@ def landing(request):
             if form.is_valid():
                 data = form.save(commit=False)
                 data.city = full_name
-                data.humidity=humidity
-                data.temperature=temp
+                data.humidity = humidity
+                data.temperature = temp
                 data.save()
             print(forecast)
         except Exception:
-            return render(request,'weather/landing.html')
+            return render(request, 'weather/landing2.html')
     else:
         forecast = {}
     return render(request, 'weather/landing.html', forecast)
