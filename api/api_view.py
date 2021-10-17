@@ -31,7 +31,7 @@ def api_weather(request):
             wet.humidity = humidity
             wet.save()
             data['city'] = full_name
-            data['tempirature'] = temp
+            data['temperature'] = temp
             data['humidity'] = humidity
     except Exception:
         return Response('wrong input')
