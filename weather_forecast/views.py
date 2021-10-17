@@ -28,5 +28,5 @@ def landing(request):
         except Exception:
             return render(request, 'weather/landing2.html')
     else:
-        forecast = {}
+        x = {}
     return render(request, 'weather/landing.html', x)
