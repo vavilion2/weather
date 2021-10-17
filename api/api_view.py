@@ -7,15 +7,21 @@ from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
 from rest_framework.response import Response
 from .api_serializer import WeatherSerializer
 from weather_forecast.my_def import base
+from weather_forecast.models import WeatherInfo
 
-@api_view(['POST', ])
+@api_view(['POST','GET' ])
 @parser_classes([JSONParser, MultiPartParser, FormParser])
 def api_weather(request):
+    if request.method == 'GET':
+        result = WeatherInfo.objects.all()
+        serialize = WeatherSerializer(result, many=True)
+        return Response(serialize.data)
     try:
         serializer = WeatherSerializer(data=request.POST)
         data = {}
         city = request.POST['city']
         x=base(city)
+
 
         if serializer.is_valid():
             wet = serializer.save()
@@ -30,3 +36,10 @@ def api_weather(request):
         return Response('wrong input')
     else:
         return Response(data)
+
+
+
+
+
+
+

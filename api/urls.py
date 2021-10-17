@@ -6,4 +6,6 @@ app_name = 'api'
 urlpatterns = [
 
     path('weather_api', api_weather, name='weather_api'),
+
+
 ]
