@@ -26,8 +26,11 @@ in 'Weather infos' there will be instances of your requests
 Using rest api:
 
 To test api use Postman (url-http://0.0.0.0:9000/weather/landing)
+POST:
 Go to the body, use form-data and input:
 KEY: city  VALUE: <name of the city>
-
+GET:
+Display all model instances
+  
 To check if it is working: go to admin and find your saved request instance
 
