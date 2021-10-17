@@ -2,8 +2,8 @@ import json
 import urllib.request
 
 
-def base(request):
-    city = request.POST['city']
+def base(city):
+    #city = request.POST['city']
     url = urllib.request.urlopen(
         'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&lang=en&units=metric&appid=cc6fe4f29cdb3623b64b1efb2da93f53'
     ).read()
@@ -18,4 +18,5 @@ def base(request):
         'temp': temp,
         'humidity': humidity,
     }
+    return forecast
     #landing(city)
