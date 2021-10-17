@@ -25,7 +25,7 @@ in 'Weather infos' there will be instances of your requests
 
 Using rest api:
 
-To test api use Postman
+To test api use Postman (url-http://0.0.0.0:9000/weather/landing)
 Go to the body, use form-data and input:
 KEY: city  VALUE: <name of the city>
 
